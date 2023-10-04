@@ -1,7 +1,7 @@
 app1:
-  image: "app1-image:latest"
+  image: "nginx:latest"
   replicas: 1
 
 app2:
-  image: "app2-image:latest"
+  image: "busybox:latest"
   replicas: 1
