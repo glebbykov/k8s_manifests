@@ -1,0 +1,7 @@
+app1:
+  image: "app1-image:latest"
+  replicas: 1
+
+app2:
+  image: "app2-image:latest"
+  replicas: 1
