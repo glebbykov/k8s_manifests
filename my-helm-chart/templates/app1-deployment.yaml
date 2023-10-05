@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1
+  name: {{ .Values.app1.name }}
 spec:
-  replicas: {{ .Values.app1.replicas }}
+  replicas: {{ .Values.app1.replicaCount }}
   selector:
     matchLabels:
-      app: app1
+      app: {{ .Values.app1.name }}
   template:
     metadata:
       labels:
-        app: app1
+        app: {{ .Values.app1.name }}
     spec:
       containers:
-      - name: app1-container
-        image: {{ .
+      - name: {{ .Values.app1.name }}
+        image: "{{ .Values.app1.image.repository }}:{{ .Values.app1.image.tag }}"
