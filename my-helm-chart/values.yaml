@@ -1,7 +1,13 @@
 app1:
-  image: "nginx:latest"
-  replicas: 1
+  replicaCount: 1
+  image:
+    repository: nginx
+    tag: stable
+  name: nginx-webserver
 
 app2:
-  image: "busybox:latest"
-  replicas: 1
+  replicaCount: 1
+  image:
+    repository: redis
+    tag: latest
+  name: redis-cache
