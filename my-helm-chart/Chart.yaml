@@ -1,4 +1,3 @@
 apiVersion: v2
 name: my-helm-chart
-description: A simple Helm chart example with two applications
 version: 0.1.0
