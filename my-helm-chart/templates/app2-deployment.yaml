@@ -1,20 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app2
+  name: {{ .Values.app2.name }}
 spec:
-  replicas: {{ .Values.app2.replicas }}
+  replicas: {{ .Values.app2.replicaCount }}
   selector:
     matchLabels:
-      app: app2
+      app: {{ .Values.app2.name }}
   template:
     metadata:
       labels:
-        app: app2
+        app: {{ .Values.app2.name }}
     spec:
       containers:
-      - name: app2-container
-        image: {{ .Values.app2.image }}
-        args:
-        - "sleep"
-        - "3600"
+      - name: {{ .Values.app2.name }}
+        image: "{{ .Values.app2.image.repository }}:{{ .Values.app2.image.tag }}"
